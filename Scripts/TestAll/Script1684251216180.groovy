@@ -17,7 +17,19 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('google.com')
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('http://localhost:8080/FlowerManagementSystem/')
+
+WebUI.click(findTestObject('Object Repository/Page_JSP Page/a_Login'))
+
+WebUI.setText(findTestObject('Object Repository/Page_JSP Page/input_Email_txtemail'), 'test@gmail.com')
+
+WebUI.setText(findTestObject('Object Repository/Page_JSP Page/input_Password_txtpassword'), 'test')
+
+WebUI.sendKeys(findTestObject('Object Repository/Page_JSP Page/input_Password_txtpassword'), Keys.chord(Keys.ENTER))
+
+WebUI.click(findTestObject('Object Repository/Page_JSP Page/a_Logout'))
 
 WebUI.closeBrowser()
 
